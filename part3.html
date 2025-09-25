@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون یادگیری ماشین - بخش سوم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* For custom scrollbar in dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4338ca;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
+        <a href="part1.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۱</a>
+        <a href="part2.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۲</a>
+        <a href="part3.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۳</a>
+        <a href="part4.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۴</a>
+        <a href="part5.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۵</a>
+    </div>
+</nav>
+
+    <div id="app" class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+        
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-400 mb-4">آزمون یادگیری ماشین (بخش سوم)</h1>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar for Question Navigation -->
+            <aside class="lg:w-1/5 lg:sticky top-8 self-start">
+                <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold text-white mb-4 text-center">لیست سوالات</h2>
+                    <nav>
+                        <ul id="question-nav" class="space-y-2">
+                            <!-- Navigation links will be injected by JS -->
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main content for questions -->
+            <main class="flex-1 space-y-8">
+                <div id="questions-container">
+
+                    <!-- Question 21 Card -->
+                    <div id="question-21" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۱</span>
+                            <span>اگر داده‌های یک مدل رگرسیون خطی دارای نویز (یا داده‌های پرت) زیاد باشند و آن‌ها را در مرحله پیش‌پردازش حذف نکرده باشیم، چه تابع خطایی برای این مدل مناسب‌تر است؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) MSE (خطای میانگین مربعات)</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) RMSE (خطای جذر میانگین مربعات)</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ج) MAE (خطای میانگین مطلق)</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) Cross-Entropy</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> تابع خطا <strong>MAE (Mean Absolute Error)</strong> از آنجایی که از توان ۲ استفاده نمی‌کند، نسبت به داده‌های پرت (<strong>Outliers</strong>) مقاوم‌تر است و آن‌ها تاثیر کمتری بر مقدار نهایی خطا می‌گذارند. در مقابل، <strong>MSE</strong> به شدت به این داده‌ها حساس است. <strong>Cross-Entropy</strong> نیز برای مسائل <strong>دسته‌بندی</strong> (Classification) کاربرد دارد، نه رگرسیون.
+                        </div>
+                    </div>
+
+                    <!-- Question 22 Card -->
+                    <div id="question-22" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۲</span>
+                            <span>اگر نرخ یادگیری (Learning Rate) خیلی بزرگ باشد، چه رخ می‌دهد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) مدل سریع‌تر به نقطه‌ی بهینه‌ی تابع خطا می‌رسد.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) مدل به نقطه‌ی بهینه‌ی تابع خطا نمی‌رسد و نوسان می‌کند.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) مدل همواره نقطه‌ی بهینه‌ی جامع (پایین‌ترین دره) را پیدا می‌کند.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) مدل Underfit می‌شود.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> اگر نرخ یادگیری (<strong>Learning Rate</strong>) خیلی بزرگ باشد، مدل گام‌های بسیار بزرگی برمی‌دارد و به جای اینکه به تدریج به سمت پایین &quot;دره&quot;ی تابع خطا حرکت کند، از آن جهش می‌کند و به اطراف نقطه بهینه نوسان می‌کند و هرگز به آن نمی‌رسد.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 23 Card -->
+                    <div id="question-23" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۳</span>
+                            <span>تفاوت اصلی بین یادگیری ماشین و برنامه‌نویسی چیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) در ML همه‌چیز بر اساس قوانین از پیش تعیین‌شده است.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) در ML مدل از داده‌ها الگو می‌گیرد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) در برنامه‌نویسی به داده نیاز نداریم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) در ML مدل ثابت است و نمی‌تواند تغییر کند.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در برنامه‌نویسی سنتی، شما قوانین صریح را برای حل یک مسئله به کامپیوتر می‌دهید. اما در <strong>یادگیری ماشین (ML)</strong>، شما داده‌ها را به مدل می‌دهید و مدل به صورت خودکار قوانین و الگوهای لازم برای حل مسئله را از این داده‌ها <strong>یاد می‌گیرد</strong>.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 24 Card -->
+                    <div id="question-24" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۴</span>
+                            <span>خروجی تابع sigmoid در مدل رگرسیون لجستیک چه معنایی دارد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) کلاس پیش‌بینی‌شده برای داده</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) احتمال تعلق به کلاس مثبت</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) خطای مدل</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) ضریب رگرسیون</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> تابع سیگموید خروجی هر عددی را به یک مقدار بین ۰ و ۱ تبدیل می‌کند که در <strong>رگرسیون لجستیک (Logistic Regression)</strong> به عنوان <strong>احتمال</strong> تعلق یک نمونه به <strong>کلاس مثبت</strong> (معمولاً کلاس ۱) تفسیر می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 25 Card -->
+                    <div id="question-25" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۵</span>
+                            <span>تفاوت اصلی بین توابع sigmoid و softmax در مدل‌های طبقه‌بندی چیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) sigmoid برای چندکلاسه است، softmax برای باینری.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) softmax برای چندکلاسه است، sigmoid برای باینری.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) استفاده از تابع softmax، سرعت آموزش مدل را بالاتر می‌برد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) تفاوتی میان آن‌ها نیست.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> تابع <strong>Softmax</strong> برای مسائل <strong>طبقه‌بندی چندکلاسه</strong> استفاده می‌شود، در حالی که <strong>Sigmoid</strong> معمولاً برای مسائل <strong>طبقه‌بندی دودویی</strong> (Binary) کاربرد دارد.
+                        </div>
+                    </div>
+
+                    <!-- Question 26 Card -->
+                    <div id="question-26" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۶</span>
+                            <span>دانشجویی که فقط نمونه سوالات ریاضی مدرس درس را حفظ می‌کند و به امتحان می‌رود، مشابه مدلی است که...</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) بیش‌برازش (Overfit) شده‌است.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) دقت (Accuracy) بالایی دارد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) کم‌برازش (Underfit) شده‌است.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) داده‌های پرت را حذف کرده است.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> <strong>بیش‌برازش (Overfitting)</strong> زمانی رخ می‌دهد که یک مدل به جای یادگیری الگوهای عمومی، جزئیات و نویزهای خاص داده‌های آموزشی را حفظ می‌کند. چنین مدلی روی داده‌های آموزشی عملکرد عالی و روی داده‌های جدید عملکرد ضعیفی دارد.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 27 Card -->
+                    <div id="question-27" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۷</span>
+                            <span>تعادل بایاس-واریانس (Bias-Variance) در یادگیری ماشین به چه معناست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) مدل همیشه باید بایاس بالایی داشته باشد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) مدل همیشه باید واریانس بالایی داشته باشد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) بایاس پایین، نشان‌دهنده‌ی Underfit شدن مدل است.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">د) باید سادگی و انعطاف‌پذیری مدل، هر دو در نظر گرفته شوند.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> <strong>تعادل بایاس-واریانس</strong> به معنای یافتن نقطه‌ای بهینه بین سادگی (بایاس کم) و انعطاف‌پذیری (واریانس کم) مدل است تا بهترین عملکرد روی داده‌های جدید حاصل شود و از <strong>Overfitting</strong> و <strong>Underfitting</strong> جلوگیری گردد.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 28 Card -->
+                    <div id="question-28" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۸</span>
+                            <span>چرا تقسیم داده به دسته‌های Train و Test اهمیت دارد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) برای کاهش حجم داده</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) برای حذف نویز</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ج) برای ارزیابی عملکرد مدل روی داده‌های دیده‌نشده</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) برای ساده‌سازی محاسبات</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> هدف اصلی از تقسیم داده به دو بخش <strong>Train</strong> و <strong>Test</strong> این است که بتوانیم عملکرد واقعی مدل را روی داده‌هایی که قبلاً ندیده است ارزیابی کنیم. این کار به ما کمک می‌کند تا مطمئن شویم مدل دچار <strong>Overfitting</strong> نشده است.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 29 Card -->
+                    <div id="question-29" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۹</span>
+                            <span>چرا یافتن پارامترهای بهینه با روش استفاده از رابطه مستقیم (برای رسیدن به کمترین خطای ممکن) در داده‌های بسیار بزرگ مشکل دارد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) چون نیاز به محاسبات ماتریسی دارد که در ابعاد بالا سنگین است.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) استفاده از این روش در داده‌های بسیار بزرگ نیز مشکلی ندارد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) چون از گرادیان کاهشی استفاده نمی‌کند.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) چون نمی‌تواند مقدار خطا را دقیقاً برابر صفر کند.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> این سوال به روش &quot;معادله نرمال&quot; (Normal Equation) اشاره دارد. این روش نیاز به معکوس کردن ماتریس دارد که عملیاتی بسیار پرهزینه از نظر محاسباتی است و با افزایش ابعاد داده‌ها، به شدت سنگین می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 30 Card -->
+                    <div id="question-30" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۰</span>
+                            <span>چرا Regularization مفید است؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) باعث کنترل Underfit می‌شود.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) به مدل اجازه می‌دهد ضرایب بزرگ را جریمه کند.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) باعث حذف داده‌های پرت می‌شود.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) باعث کاهش بایاس مدل می‌شود.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> <strong>Regularization</strong> با اضافه کردن یک جمله جریمه به تابع هزینه، مدل را مجبور می‌کند تا از ضرایب و وزن‌های بزرگ دوری کند. این کار به جلوگیری از <strong>بیش‌برازش (Overfitting)</strong> کمک می‌کند و مدل را به یادگیری الگوهای عمومی‌تر تشویق می‌نماید.
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy Button Functionality ---
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'کپی شد!';
+                    button.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = 'کپی';
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Navigation Generation & Scroll spy ---
+        const questionsContainer = document.getElementById('questions-container');
+        const questionNav = document.getElementById('question-nav');
+        const questionCards = Array.from(questionsContainer.children);
+
+        // Populate sidebar
+        questionCards.forEach((card, index) => {
+            const questionNum = index + 21;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#question-${questionNum}" class="nav-link block text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">سوال ${questionNum}</a>`;
+            card.id = `question-${questionNum}`;
+            questionNav.appendChild(li);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Intersection Observer for active link highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        questionCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>

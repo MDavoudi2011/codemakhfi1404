@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون یادگیری ماشین - بخش چهارم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* For custom scrollbar in dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4338ca;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+<nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
+        <a href="part1.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۱</a>
+        <a href="part2.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۲</a>
+        <a href="part3.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۳</a>
+        <a href="part4.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۴</a>
+        <a href="part5.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۵</a>
+    </div>
+</nav>
+    <div id="app" class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+        
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-400 mb-4">آزمون یادگیری ماشین (بخش چهارم)</h1>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar for Question Navigation -->
+            <aside class="lg:w-1/5 lg:sticky top-8 self-start">
+                <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold text-white mb-4 text-center">لیست سوالات</h2>
+                    <nav>
+                        <ul id="question-nav" class="space-y-2">
+                            <!-- Navigation links will be injected by JS -->
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main content for questions -->
+            <main class="flex-1 space-y-8">
+                <div id="questions-container">
+
+                    <!-- Question 31 Card -->
+                    <div id="question-31" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۱</span>
+                            <span>در صورت استفاده از تکنیک OVR (یکی در برابر بقیه)، چه تعداد مدل برای طبقه‌بندی $k$ کلاس آموزش داده می‌شود؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) $k-1$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) $1$</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ج) $k$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) $k^2$</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در روش <strong>OVR (One-vs-Rest)</strong>، برای هر کلاس، یک مدل باینری آموزش داده می‌شود. این مدل وظیفه دارد آن کلاس را از تمام کلاس‌های دیگر متمایز کند. بنابراین، برای $k$ کلاس، دقیقاً به $k$ مدل نیاز داریم.
+                        </div>
+                    </div>
+
+                    <!-- Question 32 Card -->
+                    <div id="question-32" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۲</span>
+                            <span>برای حل کدام مسئله باید از مدل‌های طبقه‌بندی (Classification) استفاده کرد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) تقسیم مشتریان بر اساس شباهت رفتار خرید، بدون داشتن برچسب</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) گروه‌بندی تصاویر، بدون برچسب اولیه</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) کاهش ابعاد داده</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">د) تشخیص اینکه ایمیل اسپم است یا نه</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> مسائل طبقه‌بندی (<strong>Classification</strong>) برای پیش‌بینی یک کلاس یا دسته از بین گزینه‌های از پیش تعریف شده استفاده می‌شوند. تشخیص اسپم بودن یک ایمیل، یک مسئله طبقه‌بندی دودویی (spam/not spam) است. گزینه‌های دیگر مربوط به مسائل یادگیری بی‌نظارت (Clustering) یا کاهش ابعاد هستند.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 33 Card -->
+                    <div id="question-33" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۳</span>
+                            <span>مقادیر یکی از ویژگی‌های داده‌های ما در بازه‌ی $100$ تا $500$ است. می‌خواهیم آن‌ها را scale کرده و به بازه‌ی $5$ تا $15$ بیاوریم. اگر مقدار یکی از ویژگی‌ها $200$ باشد، بعد از scale چه عددی می‌شود؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) $10$</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) $7.5$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) $6.5$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) $9$</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> از فرمول Min-Max Scaling استفاده می‌کنیم:
+                            <br>
+                            $X_{scaled} = a + \frac{(X - X_{min}) \times (b - a)}{X_{max} - X_{min}}$
+                            <br>
+                            که در آن:
+                            <br>
+                            $X = 200, X_{min} = 100, X_{max} = 500$
+                            <br>
+                            $a = 5, b = 15$
+                            <br>
+                            $X_{scaled} = 5 + \frac{(200 - 100) \times (15 - 5)}{500 - 100}$
+                            <br>
+                            $X_{scaled} = 5 + \frac{100 \times 10}{400} = 5 + \frac{1000}{400} = 5 + 2.5 = 7.5$
+                        </div>
+                    </div>
+                    
+                    <!-- Question 34 Card -->
+                    <div id="question-34" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۴</span>
+                            <span>در یک مسئله‌ی رگرسیون خطی، داده‌ها ۲ ویژگی دارند. در یکی از epoch های آموزش رگرسیون خطی، مقدار پارامترها به ترتیب از $\theta_0$ تا $\theta_2$ (چپ به راست) به این صورت است:</span>
+                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
+                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
+                                5 - 3 - 2
+                                </code></pre>
+                            </div>
+                            <span>همچنین مقدار ویژگی‌های دو تا از داده‌ها به ترتیب $x_1$ و $x_2$ (چپ به راست) و همچنین برچسب‌شان به این صورت است:</span>
+                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
+                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
+                                داده‌ی اول: ۳ - ۴ | برچسب: ۲۵
+                                داده‌ی دوم: ۱ - ۲ | برچسب: ۱۰
+                                </code></pre>
+                            </div>
+                            <span>با استفاده از تابع خطای MSE روی همین دو داده، چه خطایی می‌رسیم؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) $8$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) $6.5$</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ج) $10.5$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) $13$</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong>
+                            پیش‌بینی برای هر داده با فرمول $y_{pred} = \theta_0 + \theta_1x_1 + \theta_2x_2$ محاسبه می‌شود.
+                            <br>
+                            - برای داده اول: $y_{pred} = 5 + (3 \times 3) + (2 \times 4) = 5 + 9 + 8 = 22$
+                            <br>
+                            - برای داده دوم: $y_{pred} = 5 + (3 \times 1) + (2 \times 2) = 5 + 3 + 4 = 12$
+                            <br>
+                            خطای MSE برابر است با میانگین مربع خطاها:
+                            <br>
+                            $MSE = \frac{1}{2} \times ((25 - 22)^2 + (10 - 12)^2) = \frac{1}{2} \times (3^2 + (-2)^2) = \frac{1}{2} \times (9 + 4) = \frac{13}{2} = 6.5$
+                        </div>
+                    </div>
+                    
+                    <!-- Question 35 Card -->
+                    <div id="question-35" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۵</span>
+                            <span>با استفاده از روش رگرسیون لجستیک می‌خواهیم یک طبقه‌بندی چهارکلاسه انجام دهیم. برای یکی از داده‌ها به احتمالات زیر رسیده‌ایم:</span>
+                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
+                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
+                                احتمال تعلق به کلاس ۱: ۰/۳۵
+                                احتمال تعلق به کلاس ۲: ۰/۱۵
+                                احتمال تعلق به کلاس ۳: ۰/۲۵
+                                احتمال تعلق به کلاس ۴: ۰/۲۵
+                                </code></pre>
+                            </div>
+                            <span>با توجه به این اعداد، باید کدام کلاس را برای این داده پیش‌بینی کنیم؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) بین کلاس ۱ و ۴ به طور تصادفی پیش‌بینی می‌کنیم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) به دلیل تساوی بین کلاس‌های ۱ و ۴، کلاس محتمل بعدی (کلاس ۳) را پیش‌بینی می‌کنیم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) چنین احتمالاتی برای رگرسیون لجستیک ناممکن هستند و با آن روبه‌رو نمی‌شویم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) از یک مدل OVR برای طبقه‌بندی بین کلاس‌های ۱ و ۴ استفاده می‌کنیم.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رگرسیون لجستیک به طور مستقیم برای طبقه‌بندی چندکلاسه استفاده نمی‌شود، بلکه معمولاً برای مسائل باینری طراحی شده است. برای حل مسائل چندکلاسه با رگرسیون لجستیک، از تکنیک‌هایی مانند **One-vs-Rest (OVR)** استفاده می‌شود. در این حالت، چندین مدل باینری آموزش داده می‌شوند. هر مدل احتمال تعلق به یکی از کلاس‌ها را پیش‌بینی می‌کند و بالاترین احتمال به عنوان پیش‌بینی نهایی انتخاب می‌شود. در این مورد، کلاس ۱ با بالاترین احتمال (0.35) پیش‌بینی می‌شود.
+                        </div>
+                    </div>
+
+                    <!-- Question 36 Card -->
+                    <div id="question-36" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۶</span>
+                            <span>کدام یک از موارد زیر جزو اهداف اصلی رمزنگاری نیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) افزایش سرعت انتقال داده‌ها</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) احراز هویت فرستنده و گیرنده</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) تضمین یکپارچگی و تمامیت داده‌ها</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) حفظ محرمانگی اطلاعات</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> اهداف اصلی رمزنگاری شامل محرمانگی، احراز هویت، و یکپارچگی داده‌ها است. افزایش سرعت انتقال داده‌ها جزو اهداف رمزنگاری نیست و در واقع، فرآیند رمزنگاری می‌تواند به دلیل سربار محاسباتی، سرعت انتقال را کاهش دهد.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 37 Card -->
+                    <div id="question-37" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۷</span>
+                            <span>نقطه ضعف اصلی رمز سزار که منجر به شکسته شدن آسان آن می‌شود چیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">الف) نیاز به کلیدهای بسیار طولانی</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) عدم امکان پیاده‌سازی با کامپیوتر</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) پیچیدگی بالای الگوریتم</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">د) فضای کلید بسیار کوچک</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رمز سزار یک الگوریتم جایگزینی ساده است که هر حرف را با یک حرف دیگر که به تعداد ثابتی از آن فاصله دارد، جایگزین می‌کند. تعداد کلیدهای ممکن در این رمز بسیار محدود است (فقط ۲۵ حالت جابجایی). این فضای کلید کوچک باعث می‌شود که رمز به راحتی با حمله جستجوی فراگیر (Brute-force attack) شکسته شود.
+                        </div>
+                    </div>
+
+                    <!-- Question 38 Card -->
+                    <div id="question-38" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۸</span>
+                            <span>در تحلیل فرکانسی برای شکستن رمزهای جایگزینی، کدام ویژگی زبان مورد استفاده قرار می‌گیرد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. تعداد کل کلمات در یک متن</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. طول متوسط کلمات در یک زبان</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. ترتیب قرارگیری کلمات در جمله</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">D. نابرابری تکرار حروف مختلف در زبان</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> تحلیل فرکانسی (<strong>Frequency Analysis</strong>) بر این اصل استوار است که در هر زبان، توزیع تکرار حروف مشخص است. به عنوان مثال، در انگلیسی حرف 'E' بیشترین تکرار را دارد. تحلیلگر با محاسبه تکرار حروف در متن رمز شده و مقایسه آن با توزیع استاندارد زبان، می‌تواند رمز را حدس بزند.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 39 Card -->
+                    <div id="question-39" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۹</span>
+                            <span>رمز ویزنر (Vigenère) چگونه امنیت را نسبت به رمز سزار افزایش می‌دهد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. با حذف کامل کلید از فرآیند رمزنگاری</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. با استفاده از عملیات ریاضی پیچیده مانند ضرب ماتریسی</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">C. با استفاده از یک کلید واژه‌ای و رمزنگاری چندالفبایی</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. با استفاده از جابجایی حروف به جای جایگزینی</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رمز ویزنر از یک کلید واژه‌ای (مانند 'KEY') برای رمزنگاری استفاده می‌کند. هر حرف از متن اصلی با یک حرف متفاوت از الفبا (بر اساس حرف متناظر در کلید) رمز می‌شود. این روش، یک رمزنگاری چندالفبایی (polyalphabetic) ایجاد می‌کند که تحلیل فرکانسی را بسیار دشوار می‌سازد و امنیت آن را به مراتب از رمز تک‌الفبایی سزار بالاتر می‌برد.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 40 Card -->
+                    <div id="question-40" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۰</span>
+                            <span>در رمز Rail Fence، اگر پیام "CRYPTOGRAPHY" با ۳ ریل رمز شود، متن رمز شده چه خواهد بود؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. CTARPORPYYGH</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">B. CRYTOGARPYH</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. CPYATROGRYPH</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. CYPTPORHYGAR</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در رمز <strong>Rail Fence</strong>، حروف پیام به صورت زیگزاگ روی &quot;ریل&quot;ها نوشته می‌شوند و سپس به ترتیب ریل‌ها خوانده می‌شوند.
+                            <br>
+                            ریل ۱: C . . . O . . . A . . . Y . . .
+                            <br>
+                            ریل ۲: . R . Y . T . G . A . P . H .
+                            <br>
+                            ریل ۳: . . P . . . R . . . Y . . .
+                            <br>
+                            حروف به ترتیب خوانده می‌شوند: C O A Y R Y T G A P H. پس از مرتب‌سازی، متن رمز شده &quot;CR YP T O G R A P H Y&quot; می‌شود که با حذف فاصله، &quot;CRYP T O GRAPHY&quot; می‌شود.
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy Button Functionality ---
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'کپی شد!';
+                    button.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = 'کپی';
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Navigation Generation & Scroll spy ---
+        const questionsContainer = document.getElementById('questions-container');
+        const questionNav = document.getElementById('question-nav');
+        const questionCards = Array.from(questionsContainer.children);
+
+        // Populate sidebar
+        questionCards.forEach((card, index) => {
+            const questionNum = index + 31;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#question-${questionNum}" class="nav-link block text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">سوال ${questionNum}</a>`;
+            card.id = `question-${questionNum}`;
+            questionNav.appendChild(li);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Intersection Observer for active link highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        questionCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>

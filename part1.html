@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون پایتون - طراحی جدید</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* For custom scrollbar in dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4338ca;
+        }
+        .code-block {
+            direction: ltr;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
+        <a href="part1.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۱</a>
+        <a href="part2.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۲</a>
+        <a href="part3.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۳</a>
+        <a href="part4.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۴</a>
+        <a href="part5.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۵</a>
+    </div>
+</nav>
+    <div id="app" class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+        
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-400 mb-4">آزمون پایتون (بخش اول)</h1>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <aside class="lg:w-1/5 lg:sticky top-8 self-start">
+                <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold text-white mb-4 text-center">لیست سوالات</h2>
+                    <nav>
+                        <ul id="question-nav" class="space-y-2">
+                           </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="flex-1 space-y-8">
+                <div id="questions-container">
+
+                    <div id="question-1" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱</span>
+                            <span>خروجی قطعه کد رو به رو کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">x = 5
+y = 5
+z = x
+print(x is y)
+print(x is z)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">True<br>True</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">True<br>False</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">False<br>True</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">False<br>False</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در پایتون، برای بهینه‌سازی، اعداد صحیح کوچک (معمولا از -5 تا 256) یک بار در حافظه ساخته می‌شوند. بنابراین `x` و `y` به یک شیء یکسان در حافظه اشاره می‌کنند و `x is y` برابر `True` است. دستور `z = x` نیز باعث می‌شود `z` دقیقا به همان شیء `x` اشاره کند، پس `x is z` هم `True` است.
+                        </div>
+                    </div>
+
+                    <div id="question-2" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲</span>
+                            <span>خروجی قطعه کد رو به رو کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">text = 'hello world'
+new_text = text.replace('l', 'p')
+print(text)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">heppo worpd</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">hello world</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">hepPo worpd</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">error</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رشته‌ها (strings) در پایتون تغییرناپذیر (immutable) هستند. متد `.replace()` رشته اصلی را تغییر نمی‌دهد، بلکه یک رشته جدید تولید می‌کند. از آنجایی که ما در نهایت متغیر اصلی یعنی `text` را چاپ می‌کنیم، خروجی بدون تغییر خواهد بود.
+                        </div>
+                    </div>
+                    
+                     <div id="question-3" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳</span>
+                             <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">set1 = {'apple', 'banana', 'cherry'}
+set2 = {'google', 'microsoft', 'apple'}
+set3 = set1.intersection(set2)
+print(set3)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">{'apple', 'banana', 'cherry', 'google', 'microsoft'}</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">{'banana', 'cherry', 'google', 'microsoft'}</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">{'apple'}</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">Error: Sets cannot be intersected</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> متد `.intersection()` اشتراک دو مجموعه (set) را برمی‌گرداند. تنها عضو مشترک بین `set1` و `set2` رشته `'apple'` است.
+                        </div>
+                    </div>
+
+                    <div id="question-4" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">thisset = {'apple', 'banana', 'cherry', 1, 0, True, False}
+print(thisset)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                             <div class="option p-3 rounded-lg border border-gray-600">{'apple', 'banana', 'cherry', 1, 0, True, False}</div>
+                             <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">{'apple', 'banana', 'cherry', 1, 0}</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">error</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">{False, True, 'apple', 'banana', 'cherry', 0, 1}</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> مجموعه‌ها (sets) اعضای تکراری را ذخیره نمی‌کنند. در پایتون، `True` معادل `1` و `False` معادل `0` در نظر گرفته می‌شود. از آنجایی که `1` و `0` قبلا در مجموعه قرار گرفته‌اند، `True` و `False` به عنوان اعضای تکراری در نظر گرفته شده و اضافه نمی‌شوند.
+                        </div>
+                    </div>
+                    
+                    <div id="question-5" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۵</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">my_function(fname = 'Tobias', lname = 'Refsnes')
+def my_function(**kwargs):
+  print('His last name is ' + kwargs['lname'])</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">His last name is Refsnes</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">His last name is Tobias</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">SyntaxError: invalid syntax</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">NameError: name 'my_function' is not defined</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong> کد تلاش می‌کند تابع `my_function` را قبل از تعریف آن فراخوانی کند. مفسر پایتون کد را به ترتیب از بالا به پایین می‌خواند و در زمان فراخوانی، هنوز این تابع را نمی‌شناسد، بنابراین خطای `NameError` رخ می‌دهد.
+                        </div>
+                    </div>
+                    
+                    <div id="question-6" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۶</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">thislist = ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+thislist[1:3] = ['blackcurrant', 'watermelon', 'grape']
+print(thislist)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">['apple', 'blackcurrant', 'watermelon', 'grape', 'orange', 'kiwi', 'mango']</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">['apple', 'blackcurrant', 'watermelon', 'cherry', 'orange', 'kiwi', 'mango']</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">apple', 'banana', 'cherry','blackcurrant', 'watermelon', 'grape', 'orange','kiwi', 'mango'</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ValueError: attempt to assign sequence of size 3 to slice of size 2</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong> این کد یک جایگزینی برشی (slice assignment) انجام می‌دهد. `thislist[1:3]` به اعضای ایندکس ۱ و ۲ (یعنی `'banana'` و `'cherry'`) اشاره دارد. این دو عضو با لیست جدید جایگزین می‌شوند. در این نوع جایگزینی، طول لیست جایگزین می‌تواند متفاوت از طول برشی باشد که حذف می‌شود.
+                        </div>
+                    </div>
+                    
+                     <div id="question-7" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۷</span>
+                             <span>کدام یک از گزینه‌های زیر باعث خطا می‌شود؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                             <div class="option p-3 rounded-lg border border-gray-600"><code>print(True + 1)</code></div>
+                             <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500"><code>print(int('۲.۵'))</code></div>
+                             <div class="option p-3 rounded-lg border border-gray-600"><code>print(float('۱'))</code></div>
+                             <div class="option p-3 rounded-lg border border-gray-600"><code>print(str(1) + str(2))</code></div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong> تابع `int()` نمی‌تواند یک رشته که نمایانگر عدد اعشاری است را مستقیما به عدد صحیح تبدیل کند. این کار باعث بروز خطای `ValueError` می‌شود. برای تبدیل، ابتدا باید آن را به `float` و سپس به `int` تبدیل کرد: `int(float('2.5'))`.
+                        </div>
+                    </div>
+                    
+                    <div id="question-8" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۸</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">list1 = [1, 2, 3]
+list2 = list1
+list2 = [4, 5, 6]
+print(list1)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">[1, 2, 3]</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">[4, 5, 6]</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">[1, 2, 3, 4, 5, 6]</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">Error: UnboundLocalError</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> ابتدا `list2` به همان شیء لیستی اشاره می‌کند که `list1` به آن اشاره دارد. اما در خط سوم، یک شیء لیست <strong>جدید</strong> `[4, 5, 6]` ساخته می‌شود و نام `list2` به این شیء جدید اختصاص داده می‌شود (re-assignment). این کار هیچ تاثیری روی شیء اصلی که `list1` به آن اشاره دارد، نمی‌گذارد.
+                        </div>
+                    </div>
+                    
+                    <div id="question-9" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۹</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">text = 'hello'
+text2 = text.replace('l', 'p').upper().strip()
+print(text2)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">HEPPO</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">heppo</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">HEPPO WORLD</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">hello</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> این یک نمونه از زنجیره‌سازی متدها (method chaining) است:<br>۱. `text.replace('l', 'p')` رشته را به `'heppo'` تبدیل می‌کند.<br>۲. `.upper()` نتیجه را به `'HEPPO'` تبدیل می‌کند.<br>۳. `.strip()` فواصل خالی ابتدا و انتها را حذف می‌کند که در اینجا تاثیری ندارد.
+                        </div>
+                    </div>
+                    
+                    <div id="question-10" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۰</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">txt = 'hello world'
+if 'world' in txt or 'python' not in txt:
+    print('True')
+else:
+    print('False')</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">True</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">False</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">SyntaxError</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">TypeError</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> شرط `if` دارای یک عبارت `or` است. برای اینکه کل شرط `True` شود، کافیست فقط یکی از دو طرف `True` باشد.<br>۱. عبارت اول `'world' in txt` بررسی می‌شود که نتیجه‌اش `True` است.<br>۲. چون بخش اول `True` است، پایتون دیگر بخش دوم را بررسی نمی‌کند (short-circuiting) و بلافاصله بلوک `if` را اجرا می‌کند.
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy Button Functionality ---
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'کپی شد!';
+                    button.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = 'کپی';
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Navigation Generation & Scroll spy ---
+        const questionsContainer = document.getElementById('questions-container');
+        const questionNav = document.getElementById('question-nav');
+        const questionCards = Array.from(questionsContainer.children);
+
+        // Populate sidebar
+        questionCards.forEach((card, index) => {
+            const questionNum = index + 1;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#question-${questionNum}" class="nav-link block text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">سوال ${questionNum}</a>`;
+            questionNav.appendChild(li);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Intersection Observer for active link highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' }); // Trigger when element is in the middle of the viewport
+
+        questionCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>

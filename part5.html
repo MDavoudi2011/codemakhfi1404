@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون یادگیری ماشین - بخش پنجم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* For custom scrollbar in dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4338ca;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+<nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
+        <a href="part1.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۱</a>
+        <a href="part2.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۲</a>
+        <a href="part3.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۳</a>
+        <a href="part4.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۴</a>
+        <a href="part5.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۵</a>
+    </div>
+</nav>
+    <div id="app" class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+        
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-400 mb-4">آزمون یادگیری ماشین (بخش پنجم)</h1>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar for Question Navigation -->
+            <aside class="lg:w-1/5 lg:sticky top-8 self-start">
+                <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold text-white mb-4 text-center">لیست سوالات</h2>
+                    <nav>
+                        <ul id="question-nav" class="space-y-2">
+                            <!-- Navigation links will be injected by JS -->
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main content for questions -->
+            <main class="flex-1 space-y-8">
+                <div id="questions-container">
+
+                    <!-- Question 41 Card -->
+                    <div id="question-41" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۱</span>
+                            <span>چرا ترکیب یک رمز جابجایی با یک رمز جایگزینی، امنیت را به طور قابل توجهی افزایش می‌دهد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. چون طول پیام رمز شده دو برابر می‌شود.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. چون نیاز به کلید را از بین می‌برد.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. چون فرآیند رمزگشایی را برای کاربر مجاز آسان‌تر می‌کند.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">D. چون الگوهای آماری زبان را از بین می‌برد.</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رمزهای جایگزینی مانند رمز سزار یا ویزنر، توزیع فراوانی حروف را تغییر می‌دهند. رمزهای جابجایی (مانند Rail Fence) ترتیب حروف را به هم می‌زنند. با ترکیب این دو، الگوهای آماری مانند فراوانی حروف و دنباله‌های کلمات از بین می‌روند که تحلیل فرکانسی را برای حمله به رمز تقریباً غیرممکن می‌کند.
+                        </div>
+                    </div>
+
+                    <!-- Question 42 Card -->
+                    <div id="question-42" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۲</span>
+                            <span>محدوده کد ASCII برای حروف بزرگ انگلیسی چیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. 48-57</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. 97-122</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">C. 65-90</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. 0-31</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در جدول کد اسکی (ASCII)، حروف بزرگ انگلیسی از 'A' با کد ۶۵ شروع شده و تا 'Z' با کد ۹۰ ادامه می‌یابند.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 43 Card -->
+                    <div id="question-43" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۳</span>
+                            <span>در آماده‌سازی متن Playfair اگر دو حرف پشت‌سرهم برابر باشند چه اتفاقی می‌افتد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. حروف حذف می‌شوند</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">B. بین آن‌ها 'X' اضافه می‌شود و جفت‌سازی ادامه می‌یابد</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. حرف دوم با 'L' جایگزین می‌شود</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. پیام رمزناپذیر می‌شود</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> یکی از قوانین رمزنگاری **Playfair** این است که هیچ جفتی از حروف تکراری نباشد. اگر دو حرف پشت سر هم تکرار شوند (مانند `LL` در کلمه `HELLO`)، یک حرف پرکننده (معمولاً `X`) بین آن‌ها قرار داده می‌شود تا جفت‌ها مجزا شوند. در این مثال، `LL` به `L X L` تبدیل می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 44 Card -->
+                    <div id="question-44" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۴</span>
+                            <span>اگر $a=13$ و $b=7$ انتخاب شود، چرا رمز آفین معتبر نیست؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. چون b نباید فرد باشد</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. چون a باید اول با 26 باشد</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. چون b باید اول با a باشد</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">D. چون ۱۳ کلید مجاز نیست</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در رمز آفین، کلید $a$ باید نسبت به ۲۶ (تعداد حروف الفبای انگلیسی) **هم‌اول** (Coprime) باشد. به عبارت دیگر، بزرگترین مقسوم‌علیه مشترک (GCD) $a$ و ۲۶ باید برابر ۱ باشد. از آنجا که بزرگترین مقسوم‌علیه مشترک ۱۳ و ۲۶، برابر ۱۳ است، کلید $a=13$ یک کلید معتبر برای رمزنگاری آفین نیست.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 45 Card -->
+                    <div id="question-45" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۵</span>
+                            <span>اگر در ویزنر متن رمز شده و کلید یکی باشند (مثلاً کلید = متن اصلی)، چه اتفاقی می‌افتد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. رمز همیشه ثابت می‌ماند</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">B. رمز برابر با متن اصلی می‌شود</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. رمز همیشه A می‌شود</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. هیچ‌کدام</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در رمز ویزنر، هر حرف از متن اصلی (M) با حرف متناظر در کلید (K) جمع می‌شود. اگر متن و کلید یکسان باشند، داریم $C_i = (M_i + M_i) \pmod{26}$، که منجر به رمز شدن حروف با یکدیگر می‌شود. این کار باعث می‌شود هر حرف به حرفی دیگر رمز شود و رمز با متن اصلی برابر نخواهد بود.
+                        </div>
+                    </div>
+
+                    <!-- Question 46 Card -->
+                    <div id="question-46" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۶</span>
+                            <span>اگر رمز‌شده‌ی متن HELL برابر با LXEHLX باشد، کدام گزینه ممکن است به عنوان روش رمزنگاری استفاده شده باشد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. سزار</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. Playfair</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. جابه‌جایی ستونی (Columnar Transposition)</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">D. ویزنر (Vigenère)</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در این مثال، طول متن اصلی (۴) با طول متن رمز‌شده (۶) متفاوت است و حروف تغییر کرده‌اند. این نشان می‌دهد که یک رمز جایگزینی استفاده شده است. از بین گزینه‌ها، **ویژنر (Vigenère)** تنها رمزی است که می‌تواند چنین تغییری را ایجاد کند، زیرا با استفاده از یک کلید چندحرفی، هر حرف از متن اصلی با یک حرف متفاوت از الفبا جایگزین می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 47 Card -->
+                    <div id="question-47" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۷</span>
+                            <span>کدام رمز در برابر تحلیل فراوانی مقاوم‌تر است؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. سزار</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. آفین</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">C. ویزنر با کلید طولانی</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. جابه‌جایی ستونی</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> رمزهای سزار و آفین از رمزنگاری تک‌الفبایی استفاده می‌کنند، به این معنی که هر حرف به صورت ثابت به یک حرف دیگر تبدیل می‌شود و تحلیل فرکانسی به راحتی آن‌ها را می‌شکند. رمز جابجایی ستونی نیز توزیع فراوانی حروف را تغییر نمی‌دهد. اما رمز ویزنر با کلید طولانی‌تر از متن اصلی، یک رمز چندالفبایی قوی ایجاد می‌کند که تحلیل فرکانسی را بسیار دشوار می‌سازد.
+                        </div>
+                    </div>
+
+                    <!-- Question 48 Card -->
+                    <div id="question-48" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۸</span>
+                            <span>طول کلید در ویزنر چگونه روی امنیت تاثیر دارد؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">A. هرچه طول بیشتر، امنیت کمتر</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. طول تأثیری ندارد</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">C. طول بیشتر تحلیل فراوانی را سخت‌تر می‌کند</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. طول بیشتر رمز را برگشت‌ناپذیر می‌کند</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> هرچه طول کلید در رمز ویزنر بیشتر باشد، الگوی تکرار رمزنگاری دیرتر تکرار می‌شود و تحلیل فراوانی برای شکستن رمز بسیار دشوارتر می‌گردد. در حالت ایده‌آل (کلید به طول متن اصلی و غیرتکراری)، رمز ویزنر به یک رمز یک‌بار مصرف (One-Time Pad) نزدیک می‌شود که کاملاً امن است.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 49 Card -->
+                    <div id="question-49" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۴۹</span>
+                            <span>در جابجایی ستونی اگر طول متن دقیقا بر طول کلید بخش‌پذیر نباشد چه کاری انجام می‌شود؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">A. آخرین سطر با X پر می‌شود</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">B. آخرین ستون حذف می‌شود</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">C. متن کوتاه می‌ماند و خطا رخ می‌دهد</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">D. هیچ‌کدام</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در رمزنگاری **جابجایی ستونی (Columnar Transposition)**، متن به صورت سطرهایی در یک ماتریس نوشته می‌شود. اگر طول متن بر طول کلید بخش‌پذیر نباشد، برای پر کردن ماتریس و کامل شدن آخرین سطر، از حروف پرکننده (Padding) مانند 'X' یا 'Z' استفاده می‌شود.
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy Button Functionality ---
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'کپی شد!';
+                    button.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = 'کپی';
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Navigation Generation & Scroll spy ---
+        const questionsContainer = document.getElementById('questions-container');
+        const questionNav = document.getElementById('question-nav');
+        const questionCards = Array.from(questionsContainer.children);
+
+        // Populate sidebar
+        questionCards.forEach((card, index) => {
+            const questionNum = index + 41;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#question-${questionNum}" class="nav-link block text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">سوال ${questionNum}</a>`;
+            card.id = `question-${questionNum}`;
+            questionNav.appendChild(li);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Intersection Observer for active link highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        questionCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>

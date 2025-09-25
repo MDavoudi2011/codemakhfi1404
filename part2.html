@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون پایتون - بخش دوم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* For custom scrollbar in dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4338ca;
+        }
+        .code-block {
+            direction: ltr;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+<nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
+        <a href="part1.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۱</a>
+        <a href="part2.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۲</a>
+        <a href="part3.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۳</a>
+        <a href="part4.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۴</a>
+        <a href="part5.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">بخش ۵</a>
+    </div>
+</nav>
+    <div id="app" class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+        
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center text-indigo-400 mb-4">آزمون پایتون (بخش دوم)</h1>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar for Question Navigation -->
+            <aside class="lg:w-1/5 lg:sticky top-8 self-start">
+                <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold text-white mb-4 text-center">لیست سوالات</h2>
+                    <nav>
+                        <ul id="question-nav" class="space-y-2">
+                           <!-- Navigation links will be injected by JS -->
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main content for questions -->
+            <main class="flex-1 space-y-8">
+                <div id="questions-container">
+
+                    <!-- Question 11 Card -->
+                    <div id="question-11" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۱</span>
+                            <span>خروجی کد زیر چیست؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">text = 'hello'
+print(text.find('o', 0, 3))</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">4</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">-1</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">3</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">Error: IndexError</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> متد <code>.find()</code> در یک محدوده مشخص شده جستجو می‌کند. در اینجا، به دنبال کاراکتر 'o' در برش <code>text[0:3]</code> که معادل <code>'hel'</code> است، می‌گردد. چون 'o' در این محدوده پیدا نمی‌شود، متد مقدار <code>-1</code> را برمی‌گرداند.
+                        </div>
+                    </div>
+
+                    <!-- Question 12 Card -->
+                    <div id="question-12" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۲</span>
+                            <span>طبق قواعد زبان پایتون، کدام یک از تعریف متغیرهای زیر غیر مجاز است؟</span>
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600"><code>var_1 = 10</code></div>
+                            <div class="option p-3 rounded-lg border border-gray-600"><code>_var_2_ = 20</code></div>
+                            <div class="option p-3 rounded-lg border border-gray-600"><code>_ = 30</code></div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500"><code>4_var = 40</code></div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> در پایتون، نام متغیرها نمی‌تواند با عدد شروع شود. سایر گزینه‌ها (شروع با حرف یا آندرلاین) کاملا مجاز هستند. بنابراین گزینه <code>4_var</code> باعث خطای <code>SyntaxError</code> می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 13 Card -->
+                    <div id="question-13" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۳</span>
+                             <span>مقدار نهایی <code>count</code> پس از اجرای کد زیر چند خواهد بود؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">count = 0
+for i in range(3):
+  for j in range(2):
+    count += i + j</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">9</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">6</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">5</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">12</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> مقادیر `i` برابر 0, 1, 2 و مقادیر `j` برابر 0, 1 خواهند بود. مجموع `i+j` در هر تکرار به `count` اضافه می‌شود:<br>
+                            (0+0) + (0+1) + (1+0) + (1+1) + (2+0) + (2+1) = 0 + 1 + 1 + 2 + 2 + 3 = 9
+                        </div>
+                    </div>
+
+                    <!-- Question 14 Card -->
+                    <div id="question-14" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۴</span>
+                            <span>خروجی قطعه کد زیر کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">print(bool(0), bool(3.14), bool(-3), bool((18 - 3 + 3 * 5)/2))</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                             <div class="option p-3 rounded-lg border border-gray-600">False False True True</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">False False True False</div>
+                             <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">False True True True</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">True False True False</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong><br>
+                            - `bool(0)` برابر `False` است چون صفر مقدار Falsy محسوب می‌شود.<br>
+                            - `bool(3.14)` و `bool(-3)` هر دو `True` هستند چون اعداد غیر صفر Truthy هستند.<br>
+                            - عبارت آخر `(18 - 3 + 15)/2` برابر `30/2` یا `15` می‌شود که عددی غیر صفر و `True` است.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 15 Card -->
+                    <div id="question-15" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۵</span>
+                            <span>خروجی قطعه کد زیر کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">def first_func(num):
+    i = 3
+    while True:
+        i *= 2
+        if i > num:
+            return i
+def second_func(num):
+    count = 0
+    while True:
+        num /= 2
+        count += 1
+        if num < 5:
+            return count
+print(first_func(30) * second_func(20))</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">Syntax Error</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">144</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">96</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">60</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong><br>
+                           - `first_func(30)`: متغیر `i` با مقدار اولیه 3، به ترتیب 6، 12، 24 و 48 می‌شود. چون 48 بزرگتر از 30 است، تابع مقدار `48` را برمی‌گرداند.<br>
+                           - `second_func(20)`: متغیر `num` به ترتیب 10، 5 و 2.5 می‌شود. در هر مرحله `count` یکی اضافه می‌شود. وقتی `num` به 2.5 می‌رسد (کوچکتر از 5)، تابع مقدار `count` که `3` است را برمی‌گرداند.<br>
+                           - در نهایت `48 * 3` محاسبه و `144` چاپ می‌شود.
+                        </div>
+                    </div>
+
+                    <!-- Question 16 Card -->
+                    <div id="question-16" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۶</span>
+                            <span>خروجی کد زیر کدام خواهد بود؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">a, b, count = 1, 1, 1
+n = 55
+while b < n:
+    a, b = b, a + b
+    count += 1
+print(count)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">9</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">10</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">55</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">TimeLimit</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong> این کد دنباله فیبوناچی را تولید می‌کند و شمارنده را افزایش می‌دهد. حلقه تا زمانی ادامه دارد که `b` (عدد فعلی فیبوناچی) کوچکتر از 55 باشد. دنباله `b`: 1, 2, 3, 5, 8, 13, 21, 34, 55. وقتی `b` به 55 می‌رسد، شرط `55 < 55` برقرار نیست و حلقه متوقف می‌شود. در این لحظه `count` به `9` رسیده است.
+                        </div>
+                    </div>
+
+                    <!-- Question 17 Card -->
+                    <div id="question-17" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۷</span>
+                             <span>خروجی کد زیر کدام گزینه خواهد بود؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">n = 64
+count = 1
+for i in range(2, n):
+    root = i**2
+    if root == n:
+        count += 1
+    else:
+        while root < n:
+            root *= i
+            if root == n:
+                count += 1
+print(count)</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                             <div class="option p-3 rounded-lg border border-gray-600">2</div>
+                             <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">4</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">3</div>
+                             <div class="option p-3 rounded-lg border border-gray-600">8</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                           <strong>توضیح:</strong> این کد تعداد توان‌های کاملی که برابر 64 هستند را پیدا می‌کند (به علاوه‌ی 64 به توان 1).<br>
+                           - `count` با 1 شروع می‌شود (برای 64¹).<br>
+                           - برای `i=2`: 2⁶ برابر 64 است. `count` می‌شود 2.<br>
+                           - برای `i=4`: 4³ برابر 64 است. `count` می‌شود 3.<br>
+                           - برای `i=8`: 8² برابر 64 است. `count` می‌شود 4.<br>
+                           در نهایت مقدار 4 چاپ می‌شود.
+                        </div>
+                    </div>
+                    
+                    <!-- Question 18 Card -->
+                    <div id="question-18" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۸</span>
+                            <span>خروجی قطعه کد زیر کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">x = 25
+y = 37.7
+print('x = %.1f | y = %d' % (x, y))</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600">x = 25.0 | y = 38</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">x = 25 | y = 37.7</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">x = 25 | y = 38</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">x = 25.0 | y = 37</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> این کد از روش قالب‌بندی قدیمی پایتون استفاده می‌کند.<br>
+                            - `%.1f` مقدار اول (`x`) را به عنوان یک عدد اعشاری با یک رقم دقت نمایش می‌دهد (25 تبدیل به 25.0 می‌شود).<br>
+                            - `%d` مقدار دوم (`y`) را به عنوان یک عدد صحیح نمایش می‌دهد و بخش اعشاری آن را حذف می‌کند (37.7 تبدیل به 37 می‌شود).
+                        </div>
+                    </div>
+                    
+                    <!-- Question 19 Card -->
+                    <div id="question-19" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۱۹</span>
+                            <span>خروجی قطعه کد زیر کدام است؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+print(s1.union(s2) == s2.union(s1))</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">True</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">False</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">SyntaxError</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">{1, 2, 3, 4, 5}</div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> عمل اجتماع (union) در مجموعه‌ها دارای خاصیت جابجایی است. این یعنی ترتیب اعمال آن در نتیجه تاثیری ندارد. `s1.union(s2)` و `s2.union(s1)` هر دو مجموعه یکسان `{1, 2, 3, 4, 5}` را تولید می‌کنند. مقایسه دو مجموعه یکسان با `==` نتیجه `True` را برمی‌گرداند.
+                        </div>
+                    </div>
+                    
+                     <!-- Question 20 Card is a placeholder for the pattern one. Based on re-analysis of unnamed (13).png-->
+                    <div id="question-20" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
+                        <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
+                            <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۲۰</span>
+                            <span>خروجی قطعه کد زیر، کدام گزینه خواهد بود؟</span>
+                        </h2>
+                        <div class="code-block relative bg-black/50 rounded-lg mb-5 border border-gray-600">
+                            <button class="copy-btn absolute top-3 left-3 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded-md transition-all">کپی</button>
+                            <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono">rows = 4
+i = rows
+while i >= 1:
+    j = i
+    while j >= 1:
+        print(i*j, end='\t')
+        j -= 1
+    print()
+    i -= 1</code></pre>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="option p-3 rounded-lg border border-gray-600"><pre>4   8   12  16
+3   6   9
+2   4
+1</pre></div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500"><pre>16  12  8   4
+9   6   3
+4   2
+1</pre></div>
+                            <div class="option p-3 rounded-lg border border-gray-600"><pre>1   2   3   4
+1   2   3
+1   2
+1</pre></div>
+                            <div class="option p-3 rounded-lg border border-gray-600"><pre>4
+3   3
+2   2   2
+1   1   1   1</pre></div>
+                        </div>
+                        <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
+                            <strong>توضیح:</strong> این کد یک الگوی عددی را با حلقه‌های تودرتو چاپ می‌کند.<br>
+                           - حلقه بیرونی `i` از 4 به 1 شمارش معکوس می‌کند.<br>
+                           - حلقه درونی `j` نیز در هر تکرار حلقه بیرونی، از مقدار فعلی `i` به 1 شمارش معکوس می‌کند.<br>
+                           - در هر مرحله، حاصلضرب `i*j` چاپ می‌شود که الگوی مشخص شده در پاسخ صحیح را ایجاد می‌کند.
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy Button Functionality ---
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'کپی شد!';
+                    button.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = 'کپی';
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Navigation Generation & Scroll spy ---
+        const questionsContainer = document.getElementById('questions-container');
+        const questionNav = document.getElementById('question-nav');
+        const questionCards = Array.from(questionsContainer.children);
+
+        // Populate sidebar
+        questionCards.forEach((card, index) => {
+            const questionNum = index + 11; // Start from 11 for part 2
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#question-${questionNum}" class="nav-link block text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200">سوال ${questionNum}</a>`;
+            card.id = `question-${questionNum}`; // Assign correct ID to card
+            questionNav.appendChild(li);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Intersection Observer for active link highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' }); // Trigger when element is in the middle of the viewport
+
+        questionCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>
