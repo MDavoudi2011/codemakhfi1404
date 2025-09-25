@@ -32,6 +32,16 @@
             color: #ffffff;
         }
     </style>
+
+<script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body class="bg-gray-900 text-gray-300">
 <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg mb-8">
@@ -133,25 +143,16 @@
                     <div id="question-34" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
                         <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
                             <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۴</span>
-                            <span>در یک مسئله‌ی رگرسیون خطی، داده‌ها ۲ ویژگی دارند. در یکی از epoch های آموزش رگرسیون خطی، مقدار پارامترها به ترتیب از $\theta_0$ تا $\theta_2$ (چپ به راست) به این صورت است:</span>
-                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
-                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
-                                5 - 3 - 2
-                                </code></pre>
-                            </div>
-                            <span>همچنین مقدار ویژگی‌های دو تا از داده‌ها به ترتیب $x_1$ و $x_2$ (چپ به راست) و همچنین برچسب‌شان به این صورت است:</span>
-                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
-                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
-                                داده‌ی اول: ۳ - ۴ | برچسب: ۲۵
-                                داده‌ی دوم: ۱ - ۲ | برچسب: ۱۰
-                                </code></pre>
-                            </div>
+                            <span>در یک مسئله‌ی رگرسیون خطی، داده‌ها ۲ ویژگی دارند. در یکی از epoch های آموزش رگرسیون خطی، مقدار پارامترها به ترتیب از $\theta_0$ تا $\theta_2$ (چپ به راست) به این صورت است: ۵ - ۳ - ۲.</span>
+                            <br>
+                            <span>همچنین مقدار ویژگی‌های دو تا از داده‌ها به ترتیب $x_1$ و $x_2$ (چپ به راست) و همچنین برچسب‌شان به این صورت است: داده‌ی اول: ۳ - ۴ | برچسب: ۲۵. داده‌ی دوم: ۱ - ۲ | برچسب: ۱۰.</span>
+                            <br>
                             <span>با استفاده از تابع خطای MSE روی همین دو داده، چه خطایی می‌رسیم؟</span>
                         </h2>
                         <div class="space-y-3">
                             <div class="option p-3 rounded-lg border border-gray-600">الف) $8$</div>
-                            <div class="option p-3 rounded-lg border border-gray-600">ب) $6.5$</div>
-                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ج) $10.5$</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">ب) $6.5$</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ج) $10.5$</div>
                             <div class="option p-3 rounded-lg border border-gray-600">د) $13$</div>
                         </div>
                         <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
@@ -172,22 +173,15 @@
                     <div id="question-35" class="question-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-lg">
                         <h2 class="question-title text-xl font-bold text-indigo-400 mb-5 flex items-center gap-x-3">
                             <span class="bg-indigo-600 text-white text-sm w-8 h-8 flex items-center justify-center rounded-full">۳۵</span>
-                            <span>با استفاده از روش رگرسیون لجستیک می‌خواهیم یک طبقه‌بندی چهارکلاسه انجام دهیم. برای یکی از داده‌ها به احتمالات زیر رسیده‌ایم:</span>
-                            <div class="code-block relative bg-black/50 rounded-lg my-3 border border-gray-600">
-                                <pre class="p-4 overflow-x-auto"><code class="language-text text-sm font-mono">
-                                احتمال تعلق به کلاس ۱: ۰/۳۵
-                                احتمال تعلق به کلاس ۲: ۰/۱۵
-                                احتمال تعلق به کلاس ۳: ۰/۲۵
-                                احتمال تعلق به کلاس ۴: ۰/۲۵
-                                </code></pre>
-                            </div>
+                            <span>با استفاده از روش رگرسیون لجستیک می‌خواهیم یک طبقه‌بندی چهارکلاسه انجام دهیم. برای یکی از داده‌ها به احتمالات زیر رسیده‌ایم: احتمال تعلق به کلاس ۱: ۰/۳۵، احتمال تعلق به کلاس ۲: ۰/۱۵، احتمال تعلق به کلاس ۳: ۰/۲۵، احتمال تعلق به کلاس ۴: ۰/۲۵.</span>
+                            <br>
                             <span>با توجه به این اعداد، باید کدام کلاس را برای این داده پیش‌بینی کنیم؟</span>
                         </h2>
                         <div class="space-y-3">
-                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) بین کلاس ۱ و ۴ به طور تصادفی پیش‌بینی می‌کنیم.</div>
-                            <div class="option p-3 rounded-lg border border-gray-600">ب) به دلیل تساوی بین کلاس‌های ۱ و ۴، کلاس محتمل بعدی (کلاس ۳) را پیش‌بینی می‌کنیم.</div>
+                            <div class="option p-3 rounded-lg border bg-indigo-900/50 border-indigo-500">الف) کلاس ۱ را به دلیل داشتن بالاترین احتمال (0.35) پیش‌بینی می‌کنیم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">ب) به دلیل تساوی بین کلاس‌های ۳ و ۴، کلاس محتمل بعدی (کلاس ۱) را پیش‌بینی می‌کنیم.</div>
                             <div class="option p-3 rounded-lg border border-gray-600">ج) چنین احتمالاتی برای رگرسیون لجستیک ناممکن هستند و با آن روبه‌رو نمی‌شویم.</div>
-                            <div class="option p-3 rounded-lg border border-gray-600">د) از یک مدل OVR برای طبقه‌بندی بین کلاس‌های ۱ و ۴ استفاده می‌کنیم.</div>
+                            <div class="option p-3 rounded-lg border border-gray-600">د) از یک مدل OVR برای طبقه‌بندی بین کلاس‌های ۳ و ۴ استفاده می‌کنیم.</div>
                         </div>
                         <div class="explanation mt-5 p-4 bg-gray-700/70 border-r-4 border-indigo-500 rounded-md text-gray-300 text-sm">
                             <strong>توضیح:</strong> رگرسیون لجستیک به طور مستقیم برای طبقه‌بندی چندکلاسه استفاده نمی‌شود، بلکه معمولاً برای مسائل باینری طراحی شده است. برای حل مسائل چندکلاسه با رگرسیون لجستیک، از تکنیک‌هایی مانند **One-vs-Rest (OVR)** استفاده می‌شود. در این حالت، چندین مدل باینری آموزش داده می‌شوند. هر مدل احتمال تعلق به یکی از کلاس‌ها را پیش‌بینی می‌کند و بالاترین احتمال به عنوان پیش‌بینی نهایی انتخاب می‌شود. در این مورد، کلاس ۱ با بالاترین احتمال (0.35) پیش‌بینی می‌شود.
